@@ -1,0 +1,103 @@
+=========================
+Definitions (variable)
+=========================
+
+(val three 3)
+
+---
+
+(program
+ (variable_definition
+  (variable_name)
+  (numeral)))
+
+
+=========================
+Definitions (function)
+=========================
+
+(define f (x) 0)
+(define g (y) 5)
+(define g (y)
+  5)
+
+(define a ()
+  (time))
+
+(define sqr (x)
+  (* x x))
+
+(define two_by_two ()
+  (* 2 2))
+
+---
+
+(program
+  (function_definition
+    (function_name)
+    (formals
+      (variable_name))
+    (numeral))
+  (function_definition
+    (function_name)
+    (formals
+      (variable_name))
+    (numeral))
+  (function_definition
+    (function_name)
+    (formals
+      (variable_name))
+    (numeral))
+  (function_definition
+    (function_name)
+    (formals)
+    (function_call
+      (function_name)))
+  (function_definition
+    (function_name)
+    (formals
+      (variable_name))
+    (function_call
+      (function_name)
+      (variable_name)
+      (variable_name)))
+  (function_definition
+    (function_name)
+    (formals)
+    (function_call
+      (function_name)
+      (numeral)
+      (numeral))))
+
+
+=========================
+Definitions (use)
+=========================
+
+(use bar.impcore)
+
+---
+
+(program
+ (use_keyword
+  (file_name)))
+
+
+=========================
+Unit tests
+=========================
+
+(check-expect 4 4)
+(check-assert 0)
+(check-error x)
+
+---
+
+(program
+  (check_expect_keyword
+    (numeral)
+    (numeral))
+  (check_assert_keyword
+    (numeral))
+  (check_error_keyword
+    (variable_name)))

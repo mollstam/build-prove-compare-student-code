@@ -1,0 +1,15 @@
+(set x 14)
+; ^ keyword
+;    ^ variable
+;       ^ constant.numeric
+
+(if 0 a b)
+;^ keyword
+
+(while x y)
+; ^ keyword
+
+(begin
+; ^ keyword
+  (set n (+ n 1))
+  (println n))

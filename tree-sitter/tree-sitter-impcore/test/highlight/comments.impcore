@@ -1,0 +1,5 @@
+; comment the entire line
+; <- comment
+
+99 ; comment starting later
+;  ^ comment

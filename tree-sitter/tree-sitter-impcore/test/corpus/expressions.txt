@@ -1,0 +1,71 @@
+=========================
+Expressions (set)
+=========================
+
+(set a 4)
+
+---
+
+(program
+  (set_keyword
+    (variable_name)
+    (numeral)))
+
+
+=========================
+Expressions (if)
+=========================
+
+(if (odd x) 0 1)
+
+---
+
+(program
+  (if_expression
+    (function_call
+      (function_name)
+      (variable_name))
+    (numeral)
+    (numeral)))
+
+
+=========================
+Expressions (while)
+=========================
+
+(while (positive x) (set x (- x 1)))
+
+---
+
+(program
+  (while_expression
+    (function_call
+      (function_name)
+      (variable_name))
+    (set_keyword
+      (variable_name)
+      (function_call
+        (function_name)
+        (variable_name)
+        (numeral)))))
+
+
+=========================
+Expressions (begin)
+=========================
+
+(begin
+  (foo x)
+  (set x 4)
+  (foo x)
+)
+
+---
+
+(program
+  (begin_keyword
+    (function_call (function_name) (variable_name))
+    (set_keyword (variable_name) (numeral))
+    (function_call (function_name) (variable_name))))
+
+

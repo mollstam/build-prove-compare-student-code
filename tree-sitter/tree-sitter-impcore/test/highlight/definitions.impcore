@@ -1,0 +1,33 @@
+(val fifty_one 51)
+; <- punctuation.bracket
+;                ^ punctuation.bracket
+;^ keyword
+;     ^ variable
+;               ^ constant.numeric
+
+(define sqr (x)
+; ^ keyword
+;       ^ function
+;            ^ variable.parameter
+  (* x x))
+;  ^ function
+;    ^ variable.parameter
+;      ^ variable.parameter
+
+(use math.impcore)
+; ^ keyword
+;      ^ string.unquoted
+
+(check-expect x 4)
+; ^ keyword
+;             ^ variable
+;               ^ constant.numeric
+
+(check-assert 1)
+; ^ keyword
+;             ^ constant.numeric
+
+
+(check-error 0)
+;       ^ keyword
+;            ^ constant.numeric

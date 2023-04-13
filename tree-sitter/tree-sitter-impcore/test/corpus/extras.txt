@@ -1,0 +1,22 @@
+=========================
+Comment entire line
+=========================
+
+; comments start at semicolon and continue for the rest of the line
+
+---
+
+(program
+  (comment))
+
+
+=========================
+Comment to EOL
+=========================
+
+14 ;fourteen
+
+---
+
+(program
+  (numeral) (comment))
