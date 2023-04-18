@@ -9,7 +9,6 @@
     (println x))
   )
 
-;hello this is a comment
 (begin
   (set x 2)
   (Q 4)

@@ -1,0 +1,13 @@
+(val i 0)
+(val s 0)
+(define sigma (m n)
+  (begin
+    (set i m)
+    (while (<= i n)
+      (begin
+        (set s (+ s i))
+        (set i (+ i 1))))
+    s))
+
+(check-assert (= (sigma 10 13) 46))
+

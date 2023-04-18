@@ -1,0 +1,25 @@
+(val s 0)
+(define exp (b n)
+  (begin
+    (set s 1)
+    (while (> n 0)
+      (begin
+        (set s (* s b))
+        (set n (- n 1))))
+    s))
+
+(check-assert (= (exp 4 2) 16))
+(check-assert (= (exp 2 10) 1024))
+(check-assert (= (exp 450 0) 1))
+
+(val n 0)
+(define log (b m)
+  (begin
+    (set n 0)
+    (while (<= (exp b (+ n 1)) m)
+        (set n (+ n 1)))
+    n))
+
+(check-assert (= (log 2 10) 3))
+(check-assert (= (log 4 60) 2))
+(check-assert (= (log 5 1000) 4))
